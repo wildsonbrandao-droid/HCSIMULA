@@ -80,7 +80,19 @@ table.valv td:first-child{font-weight:600}
 .tg.sys{background:#e9eef7;color:#33507e}.tg.dia{background:var(--cardio-soft);color:var(--cardio-ink)}.tg.cont{background:#efeaf6;color:#6a4a8f}
 .sons-note{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:24px}
 footer{border-top:1px solid var(--line);margin-top:50px;padding:26px 0 60px;color:var(--muted);font-size:13px}
-@media print{nav.tabs{display:none}body{background:#fff}.step,.snd,.info{break-inside:avoid;border:1px solid #ccc}.au audio{display:none}figure img{max-height:340px;object-fit:contain}}
+/* ==== Abas principais: Simulação / Procedimentos ==== */
+nav.maintabs{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:2px solid var(--line)}
+nav.maintabs .wrap{display:flex;gap:10px;padding:12px 0}
+.maintab-btn{cursor:pointer;font-family:"IBM Plex Mono",monospace;font-size:15px;font-weight:700;letter-spacing:.03em;padding:11px 22px;border-radius:999px;border:1.5px solid var(--line);color:var(--muted);background:var(--card);transition:.15s}
+.maintab-btn:hover{color:var(--ink)}
+.maintab-btn.active[data-main="simulacao"]{background:var(--cardio-soft);border-color:var(--cardio);color:var(--cardio-ink)}
+.maintab-btn.active[data-main="procedimentos"]{background:var(--pulm-soft);border-color:var(--pulm);color:var(--pulm-ink)}
+.maintab{display:none}
+.maintab.active{display:block}
+nav.maintabs + nav.tabs{top:66px}
+#tab-simulacao > section{scroll-margin-top:124px}
+body.mode-procedimentos nav.tabs{display:none}
+@media print{nav.maintabs{display:none}.maintab{display:block!important}nav.tabs{display:none}body{background:#fff}.step,.snd,.info{break-inside:avoid;border:1px solid #ccc}.au audio{display:none}figure img{max-height:340px;object-fit:contain}}
 /* alterações & doenças */
 .dz-lead{color:var(--muted);font-size:14.5px;max-width:74ch;margin:2px 0 8px}
 .dz-block{font-family:Spectral,serif;font-weight:700;font-size:clamp(19px,2.6vw,25px);letter-spacing:-.01em;margin:34px 0 4px;padding-bottom:8px;border-bottom:2px solid var(--cardio-soft)}
@@ -92,6 +104,10 @@ footer{border-top:1px solid var(--line);margin-top:50px;padding:26px 0 60px;colo
   <p class="sub">A técnica de cada manobra, passo a passo, com a figura de referência ao lado. Para cada etapa: o que fazer, o achado normal e o sinal de alerta. A seção cardiovascular traz ainda bulhas e sopros com gráficos e áudio.</p>
   <p class="src">Conteúdo e figuras extraídos dos seus arquivos e do capítulo de exame do coração do <i>Porto — Exame Clínico</i> (8ª ed.).</p>
 </div></header>
+<nav class="maintabs"><div class="wrap">
+  <button class="maintab-btn active" data-main="simulacao">🩺 Simulação</button>
+  <button class="maintab-btn" data-main="procedimentos">🩻 Procedimentos</button>
+</div></nav>
 <nav class="tabs"><div class="wrap">
   <a class="pulm" href="#pulmonar">Pulmonar</a>
   <a class="pulm" href="#doencas-pulm">Síndromes pulmonares</a>
@@ -99,9 +115,9 @@ footer{border-top:1px solid var(--line);margin-top:50px;padding:26px 0 60px;colo
   <a class="card" href="#sons">Sons &amp; sopros</a>
   <a class="card" href="#doencas">Cardiopatias</a>
   <a class="card" href="#questoes">Questões ENAMED</a>
-  <a class="rad" href="#radiologia">Radiologia (HC3)</a>
 </div></nav>
 <main class="wrap">
+<div id="tab-simulacao" class="maintab active">
   <section id="pulmonar" class="pulm-sec">
     <div class="sec-head"><span class="bar"></span><div><p class="tag">Sistema respiratório</p><h2>Exame físico pulmonar</h2></div></div>
     <article class="step pulm"><div class="step-head"><span class="num">Preparo</span><div><p class="eyebrow">ANTES DE TOCAR</p><h3>Ambiente e posicionamento</h3></div></div>
@@ -136,6 +152,8 @@ footer{border-top:1px solid var(--line);margin-top:50px;padding:26px 0 60px;colo
     <p class="sons-note">Base: <i>Porto — Exame Clínico</i>, 8ª ed. (capítulo de exame do coração). A fisiopatologia da SCA é apresentada de forma introdutória, para ancorar os achados semiológicos; aprofunde nos capítulos de sinais e sintomas e na cardiologia.</p>
   </section>
 <section class="card-sec" id="questoes"><div class="sec-head"><span class="bar"></span><div><p class="tag">Banco de questões</p><h2>Questões estilo ENAMED</h2></div></div><p class="dz-lead">50 questões objetivas de múltipla escolha (4 alternativas, apenas uma correta), no estilo do ENAMED — vinhetas clínicas que cobram raciocínio — sobre as cardiopatias e a semiologia deste guia. Toque em uma alternativa para travar a resposta e ver o gabarito com comentário. Use os filtros por tema e o placar para acompanhar o desempenho.</p><div class="quiz-bar"><div class="quiz-filters" id="quizFilters"></div><div class="quiz-score" id="quizScore">0 / 0 respondidas</div></div><div id="quizList"></div><div class="quiz-actions"><button id="quizReset">Refazer todas</button><span class="quiz-empty" id="quizNote"></span></div></section>
+</div>
+<div id="tab-procedimentos" class="maintab">
 <section class="card-sec" id="radiologia"><div class="sec-head"><span class="bar"></span><div><p class="tag">Guia integrado</p><h2>Radiologia — Anatomia por imagem (HC3)</h2></div></div><p class="dz-lead">Guia completo de anatomia radiológica de tórax e pescoço (RX/TC): roteiro de leitura, checklists, TC passo a passo, anatomia normal, casos, conceitos avançados, quiz, avaliação com imagens, flashcards e autoavaliação. Conteúdo integrado como sub-aba interna abaixo, no tema claro do HC_SIMULA, preservando todas as imagens e ferramentas.</p><p class="rad-note"><span>↓ Use os botões abaixo para navegar entre as 17 seções da Radiologia.</span><a href="hc3-radiologia.html" target="_blank" rel="noopener">Abrir em tela cheia ↗</a></p><div class="rad-frame-wrap">
 <div class="hc3-app" id="hc3-app">
 <style>
@@ -1282,7 +1300,7 @@ buttons.forEach(btn=>{
     sections.forEach(s=>s.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(btn.dataset.tab).classList.add('active');
-    window.scrollTo({top:0,behavior:'smooth'});
+    document.getElementById('radiologia').scrollIntoView({behavior:'smooth',block:'start'});
     closeSidebar();
   });
 });
@@ -1415,6 +1433,7 @@ const avalImgData = [{"img": "hc3/hc3-085.jpg", "cap": "RX de tórax AP — cria
 })();
 </script>
 </div></section>
+</div>
 </main>
 <footer><div class="wrap">Sequência: inspeção → palpação → percussão → ausculta (pulmonar) · sentado → 45° → decúbito (cardiovascular). Compare sempre lados simétricos e, ao ouvir um sopro, palpe a carótida para situá-lo no ciclo.</div></footer>
 <script>
@@ -1441,6 +1460,20 @@ function cardHTML(q){var answered=(q.id in state);var alts=q.alts.map(function(a
 function renderList(){var items=Q.filter(function(q){return filter==="Todas"||q.tema===filter;});list.innerHTML=items.map(cardHTML).join("");Array.prototype.forEach.call(list.querySelectorAll(".q-alt"),function(b){if(b.className.indexOf("locked")>=0)return;b.onclick=function(){var id=+b.getAttribute("data-q");if(id in state)return;state[id]=+b.getAttribute("data-i");renderList();renderScore();};});renderScore();}
 document.getElementById("quizReset").onclick=function(){state={};renderList();};
 renderFilters();renderList();
+})();
+</script>
+<script>
+(function(){
+  const mainBtns=[...document.querySelectorAll('.maintab-btn')];
+  const groups={simulacao:document.getElementById('tab-simulacao'),procedimentos:document.getElementById('tab-procedimentos')};
+  function setMain(name){
+    mainBtns.forEach(b=>b.classList.toggle('active',b.dataset.main===name));
+    Object.keys(groups).forEach(k=>{if(groups[k])groups[k].classList.toggle('active',k===name);});
+    document.body.classList.toggle('mode-procedimentos',name==='procedimentos');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  mainBtns.forEach(b=>b.addEventListener('click',()=>setMain(b.dataset.main)));
+  if(location.hash==='#radiologia') setMain('procedimentos');
 })();
 </script>
 </body></html>
