@@ -299,6 +299,7 @@ body.mode-procedimentos nav.tabs{display:none}
   <button data-tab="torax">6. Casos Tórax</button>
   <button data-tab="cardio">7. Casos Cardíacos</button>
   <button data-tab="sinais">8. Glossário de Sinais</button>
+  <button data-tab="sinaischave">8b. Sinais-chave</button>
   <button data-tab="externo">9. Recursos Externos</button>
   <button data-tab="avancado">9b. Conceitos Avançados</button>
   <button data-tab="padroes4">9c. 4 Padrões & IC</button>
@@ -1102,6 +1103,105 @@ body.mode-procedimentos nav.tabs{display:none}
   </div>
 
   <div id="autoaval-container"></div>
+</section>
+
+<section id="sinaischave">
+  <h2>Sinais-chave — revisão rápida das prováveis doenças</h2>
+  <p class="small">Resumo direto <b>achado → diagnóstico</b> das doenças mais prováveis da prova, com as imagens do próprio material. Use como revisão final; os casos completos estão em "Casos Tórax" e "Casos Cardíacos".</p>
+
+  <h3 style="color:var(--accent);margin:18px 0 6px">Torácicas / pulmonares</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px">
+
+    <div class="card">
+      <div class="case-header">Abscesso</div>
+      <div class="img-box"><img src="hc3/hc3-047.jpg" loading="lazy"><div class="img-cap">TC — cavidade com nível hidroaéreo dentro da consolidação.</div></div>
+      <p>Nível hidroaéreo, com paredes irregulares e espessas.</p>
+    </div>
+
+    <div class="card">
+      <div class="case-header">Pneumatocele</div>
+      <div class="img-box"><img src="hc3/hc3-045.jpg" loading="lazy"><div class="img-cap">RX/TC — massa cística bem delimitada, parede fina e regular.</div></div>
+      <p>Massa cística contendo ar, bem delimitada, com parede lisa, fina e regular, que pode ou não conter líquido.</p>
+    </div>
+
+    <div class="card">
+      <div class="case-header">Derrame pleural</div>
+      <div class="img-box"><img src="hc3/hc3-048.jpg" loading="lazy"><div class="img-cap">RX — apagamento do ângulo costofrênico, sinal do menisco.</div></div>
+      <p>Sinal do menisco; opacidade homogênea em base pulmonar com apagamento do ângulo do seio costofrênico.</p>
+    </div>
+
+    <div class="card">
+      <div class="case-header">Pneumotórax</div>
+      <div class="img-box"><img src="hc3/hc3-050.jpg" loading="lazy"><div class="img-cap">RX — hipertransparência sem trama vascular, linha pleural visceral.</div></div>
+      <p>Linha pleural visceral visível; área de hipertransparência no hemitórax acometido; a traqueia desvia para o lado oposto (no hipertensivo). Obs.: na atelectasia a traqueia desloca para o mesmo lado.</p>
+    </div>
+
+    <div class="card">
+      <div class="case-header">Enfisema</div>
+      <div class="img-box"><img src="hc3/hc3-055.jpg" loading="lazy"><div class="img-cap">TC — destruição das paredes alveolares, espaços hipodensos.</div></div>
+      <p>Destruição das paredes alveolares, formando espaços cheios de ar (hipodensos).</p>
+    </div>
+
+    <div class="card">
+      <div class="case-header">DPOC</div>
+      <div class="img-box"><img src="hc3/hc3-054.jpg" loading="lazy"><div class="img-cap">RX — hiperinsuflação, tórax em barril, cúpulas achatadas.</div></div>
+      <p>Achatamento das cúpulas diafragmáticas, aumento dos espaços intercostais, hiperinsuflação com espessamento broncovascular.</p>
+    </div>
+
+    <div class="card">
+      <div class="case-header">Consolidação pulmonar</div>
+      <div class="img-box"><img src="hc3/hc3-059.jpg" loading="lazy"><div class="img-cap">TC — opacidade do espaço aéreo com broncograma aéreo.</div></div>
+      <p>Broncograma aéreo e opacidade do parênquima.</p>
+    </div>
+
+    <div class="card">
+      <div class="case-header">Vidro fosco</div>
+      <div class="img-box"><img src="hc3/hc3-061.jpg" loading="lazy"><div class="img-cap">TC — opacidades bilaterais em vidro fosco (COVID-19).</div></div>
+      <p>Aumento da densidade da trama broncovascular (vasos ficam mais visíveis, ao contrário da consolidação); bilateral e assimétrica, hipotransparência e bordas difusas.</p>
+    </div>
+
+    <div class="card">
+      <div class="case-header">Pneumomediastino</div>
+      <div class="img-box"><img src="hc3/hc3-065.jpg" loading="lazy"><div class="img-cap">TC coronal — sinal do diafragma contínuo.</div></div>
+      <p>Sinal do diafragma contínuo (ar mostrando a separação entre coração e diafragma) e sinal do tubo duplo (ar ao redor da traqueia e também dentro dela).</p>
+    </div>
+
+  </div>
+
+  <h3 style="color:var(--accent);margin:22px 0 6px">Cardiovasculares</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px">
+
+    <div class="card">
+      <div class="case-header">Cardiomegalia</div>
+      <div class="img-box"><img src="hc3/hc3-072.jpg" loading="lazy"><div class="img-cap">Esquema + sinal de Shmoo (dilatação do VE, aorta dilatada).</div></div>
+      <p>Sinal de Shmoo, borda esquerda proeminente e aorta dilatada.</p>
+    </div>
+
+    <div class="card">
+      <div class="case-header">Estenose aórtica</div>
+      <div class="img-box"><img src="hc3/hc3-073.jpg" loading="lazy"><div class="img-cap">TC — parede ventricular espessa (hipertrofia concêntrica).</div></div>
+      <p>Parede ventricular esquerda espessa.</p>
+    </div>
+
+    <div class="card">
+      <div class="case-header">Derrame pericárdico</div>
+      <div class="img-box"><img src="hc3/hc3-077.jpg" loading="lazy"><div class="img-cap">TC — sinal do biscoito Oreo (líquido entre as gorduras).</div></div>
+      <p>Sinal da garrafa d'água (silhueta cardíaca em formato globular) e sinal do biscoito Oreo (líquido pericárdico entre as gorduras paracárdica e epicárdica).</p>
+    </div>
+
+    <div class="card">
+      <div class="case-header">Aneurisma de aorta</div>
+      <div class="img-box"><img src="hc3/hc3-079.jpg" loading="lazy"><div class="img-cap">TC — dilatação focal do lúmen da aorta.</div></div>
+      <p>Dilatação do lúmen, geralmente com placas ateroscleróticas.</p>
+    </div>
+
+    <div class="card">
+      <div class="case-header">Trombo / TEP</div>
+      <div class="img-box"><img src="hc3/hc3-083.jpg" loading="lazy"><div class="img-cap">TC com contraste — falha de enchimento na artéria pulmonar.</div></div>
+      <p>Falha de enchimento e sinal de Palla (aumento do calibre da artéria pulmonar descendente do lado acometido).</p>
+    </div>
+
+  </div>
 </section>
 
 </main>
